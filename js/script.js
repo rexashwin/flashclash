@@ -87,7 +87,7 @@ function eventListeners(){
         });
         data = tempData;
         questionInput.value = tempQuestion[0].title;
-        questionInput.value = tempQuestion[0].answer;
+        // questionInput.value = tempQuestion[0].answer;
     }  
     });
 }
@@ -151,4 +151,21 @@ function Question(id, title, answer){
 // dom event listener to run when content is loaded
 document.addEventListener('DOMContentLoaded', function(){
     eventListeners();
+})
+
+// search note by text input
+let searchTxt = document.getElementById("searchTxt");
+searchTxt.addEventListener("input", function () {
+    let inputVal = searchTxt.value;
+    // console.log("event fired!",  inputVal);
+    let flashcard = document.getElementsByClassName("flashcard");
+    Array.from(flashcard).forEach(function (element) {
+        let cardTxt = element.getElementsByTagName("h4")[0].innerText;
+        if (cardTxt.includes(inputVal)) {
+            element.style.display = "block";
+        }
+        else {
+            element.style.display = "none";
+        }
+    });
 })

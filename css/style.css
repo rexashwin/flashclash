@@ -80,6 +80,29 @@ header h2:hover::after {
   color: var(--mainGreen);
 }
 
+.searchContainer{
+  width: 77vw;
+  margin: auto;
+}
+
+.searchContainer #searchTxt{
+  margin-right: 10px;
+  border-color: var(--mainOrange);
+  color: var(--mainGreen);
+}
+
+.searchBtn {
+  border-color:  var(--mainGreen);
+  color: var(--mainGreen);
+  background: transparent;
+  transition: transform .2s;
+}
+
+.searchBtn:hover {
+  background: var(--mainGreen);
+  color: var(--mainWhite);
+}
+
 .show-btn {
   border-color: var(--mainOrange);
   color: var(--mainOrange);
